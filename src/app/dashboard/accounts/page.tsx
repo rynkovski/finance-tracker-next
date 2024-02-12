@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 
 function Accounts() {
-  return <Container>Hello Accounts</Container>;
+  return <Container>Accounts</Container>;
 }
 
 export default Accounts;
