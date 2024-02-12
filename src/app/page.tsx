@@ -6,7 +6,9 @@ import { Container } from "@mui/material";
 export default function Home() {
   return (
     <Container>
-      <Button variant="contained">Hello world</Button>
+      <Button variant="contained" href="/dashboard">
+        Hello world
+      </Button>
     </Container>
   );
 }

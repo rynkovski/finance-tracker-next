@@ -1,5 +1,7 @@
+import Container from "@mui/material/Container";
+
 function Reports() {
-  return <div>Hello Reports</div>;
+  return <Container>Hello Reports</Container>;
 }
 
 export default Reports;

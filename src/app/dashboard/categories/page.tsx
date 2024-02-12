@@ -1,5 +1,7 @@
+import Container from "@mui/material/Container";
+
 function Categories() {
-  return <div>Hello Categories</div>;
+  return <Container>Hello Categories</Container>;
 }
 
 export default Categories;

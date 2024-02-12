@@ -1,5 +1,7 @@
+import Container from "@mui/material/Container";
+
 function Settings() {
-  return <div>Hello Settings</div>;
+  return <Container>Hello Settings</Container>;
 }
 
 export default Settings;

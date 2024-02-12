@@ -13,6 +13,7 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import List from "@mui/material/List";
 import { Toolbar, Typography } from "@mui/material";
 import { mainListItems } from "@/components/list-items";
+import { AccountCircle } from "@mui/icons-material";
 
 const drawerWidth: number = 240;
 
@@ -99,9 +100,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
+            <AccountCircle fontSize="large" />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -141,6 +140,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           overflow: "auto",
         }}
       >
+        <Toolbar />
         {children}
       </Box>
     </Box>

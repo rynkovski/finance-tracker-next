@@ -1,5 +1,4 @@
 "use client";
-import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -11,10 +10,8 @@ import Copyright from "@/components/copyright";
 export default function Dashboard() {
   return (
     <>
-      <Toolbar />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={3}>
-          {/* Chart */}
           <Grid item xs={12} md={8} lg={9}>
             <Paper
               sx={{
@@ -27,7 +24,6 @@ export default function Dashboard() {
               <Chart />
             </Paper>
           </Grid>
-          {/* Recent Deposits */}
           <Grid item xs={12} md={4} lg={3}>
             <Paper
               sx={{
@@ -40,7 +36,6 @@ export default function Dashboard() {
               <Deposits />
             </Paper>
           </Grid>
-          {/* Recent Orders */}
           <Grid item xs={12}>
             <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
               <Orders />
