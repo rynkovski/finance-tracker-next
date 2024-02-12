@@ -1,6 +1,6 @@
 "use client";
-import { AddCircleOutlineOutlined } from "@mui/icons-material";
-import { Box, Button, Modal, Typography } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import { Box, Button, Fab, Modal, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 const style = {
@@ -12,6 +12,9 @@ const style = {
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
+  display: "flex",
+  flexDirection: "column",
+  gap: 4,
 };
 
 function AddPayerModal() {
@@ -20,9 +23,9 @@ function AddPayerModal() {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <Button variant="contained" onClick={handleOpen}>
-        <AddCircleOutlineOutlined />
-      </Button>
+      <Fab size="medium" color="primary" aria-label="add" onClick={handleOpen}>
+        <AddIcon />
+      </Fab>
       <Modal
         open={open}
         onClose={handleClose}
@@ -31,11 +34,14 @@ function AddPayerModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            Add payer
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <TextField
+            id="outlined-basic"
+            label="Enter payer's name"
+            variant="outlined"
+          />
+          <Button variant="outlined">Add</Button>
         </Box>
       </Modal>
     </>

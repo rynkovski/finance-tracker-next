@@ -26,7 +26,7 @@ export const mainListItems = (
       <ListItem key={href} disablePadding>
         <ListItemButton component={Link} href={href}>
           <ListItemIcon>
-            <Icon />
+            <Icon color="primary" />
           </ListItemIcon>
           <ListItemText primary={text} />
         </ListItemButton>
