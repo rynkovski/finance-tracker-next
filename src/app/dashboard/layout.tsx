@@ -3,17 +3,14 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import List from "@mui/material/List";
 import { Toolbar, Typography } from "@mui/material";
-import { mainListItems } from "@/components/list-items";
-import { AccountCircle } from "@mui/icons-material";
+import { Navbar } from "@/components/navbar";
+import LetterAvatar from "@/components/letter-avatar";
 
 const drawerWidth: number = 240;
 
@@ -96,11 +93,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             color="inherit"
             noWrap
             sx={{ flexGrow: 1 }}
-          >
-            Dashboard
-          </Typography>
+          ></Typography>
           <IconButton color="inherit">
-            <AccountCircle fontSize="large" />
+            <LetterAvatar />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -126,7 +121,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </IconButton>
         </Toolbar>
         <Divider />
-        <List component="nav">{mainListItems}</List>
+        <Navbar />
       </Drawer>
       <Box
         component="main"

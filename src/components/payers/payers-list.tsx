@@ -9,10 +9,7 @@ const payers = ["krzysiem", "andrzej", "konrad", "maciej"];
 
 export default function PayersList() {
   return (
-    <List
-      dense
-      sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-    >
+    <List dense sx={{ width: "100%", bgcolor: "background.paper" }}>
       {payers.map((payer) => {
         return (
           <ListItem key={payer}>

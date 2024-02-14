@@ -10,6 +10,8 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ListItem from "@mui/material/ListItem";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { List } from "@mui/material";
 
 const LINKS = [
   { text: "Dashboard", href: "/dashboard", icon: AccountBalanceWalletIcon },
@@ -19,18 +21,24 @@ const LINKS = [
   { text: "Categories", href: "/dashboard/categories", icon: ChecklistIcon },
   { text: "Settings", href: "/dashboard/settings", icon: SettingsIcon },
 ];
-
-export const mainListItems = (
-  <React.Fragment>
-    {LINKS.map(({ text, href, icon: Icon }) => (
-      <ListItem key={href} disablePadding>
-        <ListItemButton component={Link} href={href}>
-          <ListItemIcon>
-            <Icon color="primary" />
-          </ListItemIcon>
-          <ListItemText primary={text} />
-        </ListItemButton>
-      </ListItem>
-    ))}
-  </React.Fragment>
-);
+export function Navbar() {
+  const pathname = usePathname();
+  return (
+    <List component="nav">
+      {LINKS.map(({ text, href, icon: Icon }) => (
+        <ListItem key={href} disablePadding>
+          <ListItemButton
+            component={Link}
+            href={href}
+            selected={href === pathname}
+          >
+            <ListItemIcon>
+              <Icon color="primary" />
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItemButton>
+        </ListItem>
+      ))}
+    </List>
+  );
+}
