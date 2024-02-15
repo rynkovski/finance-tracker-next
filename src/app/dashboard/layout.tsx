@@ -8,9 +8,16 @@ import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { Toolbar, Typography } from "@mui/material";
+import {
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import { Navbar } from "@/components/navbar";
 import LetterAvatar from "@/components/letter-avatar";
+import { Logout, Settings } from "@mui/icons-material";
 
 const drawerWidth: number = 240;
 
@@ -67,6 +74,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const handleOpenUserMenu = (event: any) => {
+    setAnchorElUser(event.currentTarget);
+  };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar position="absolute" open={open}>
@@ -94,9 +108,45 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             noWrap
             sx={{ flexGrow: 1 }}
           ></Typography>
-          <IconButton color="inherit">
-            <LetterAvatar />
-          </IconButton>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <IconButton
+              color="inherit"
+              onClick={handleOpenUserMenu}
+              sx={{ p: 0 }}
+            >
+              <LetterAvatar />
+            </IconButton>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              <MenuItem onClick={handleCloseUserMenu}>
+                <ListItemIcon>
+                  <Settings fontSize="small" />
+                </ListItemIcon>
+                Settings
+              </MenuItem>
+              <MenuItem onClick={handleCloseUserMenu}>
+                <ListItemIcon>
+                  <Logout fontSize="small" />
+                </ListItemIcon>
+                Logout
+              </MenuItem>
+            </Menu>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

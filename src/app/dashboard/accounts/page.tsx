@@ -1,3 +1,4 @@
+import AccountsList from "@/components/accounts/accounts-list";
 import AddAccountsModal from "@/components/accounts/add-accounts-modal";
 import AddModal from "@/components/add-modal";
 import { Box } from "@mui/material";
@@ -16,6 +17,7 @@ function Accounts() {
         width={"100%"}
       >
         <AddModal children={<AddAccountsModal />} />
+        <AccountsList />
       </Box>
     </Container>
   );
