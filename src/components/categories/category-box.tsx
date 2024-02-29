@@ -1,6 +1,5 @@
 "use client";
 import SubCategoryBox, { SubCategory } from "./subcategory-box";
-import { MoreVert } from "@mui/icons-material";
 import { useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -13,6 +12,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import CategoryMoreMenu from "./category-more-menu";
 
 type Props = {
   name: string;
@@ -58,9 +58,8 @@ function CategoryBox({ name, icon, subCategories }: Props) {
             <Icon>{icon}</Icon>
             <Typography>{name}</Typography>
           </Stack>
-          <IconButton sx={{ align: "right" }}>
-            <MoreVert />
-          </IconButton>
+
+          <CategoryMoreMenu />
         </Stack>
       </Box>
       {subCategories.length !== 0 ? (
