@@ -1,6 +1,6 @@
 "use client";
 import SubCategoryBox, { SubCategory } from "./subcategory-box";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import {
