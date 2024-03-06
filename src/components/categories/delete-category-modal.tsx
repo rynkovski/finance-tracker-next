@@ -7,6 +7,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { MenuItem } from "@mui/material";
 
 export default function DeleteCategoryModal() {
   const [open, setOpen] = React.useState(false);
@@ -21,10 +22,11 @@ export default function DeleteCategoryModal() {
 
   return (
     <>
-      <Button onClick={handleClickOpen}>
+      <MenuItem sx={{ display: "flex", gap: "4px" }} onClick={handleClickOpen}>
         <DeleteIcon />
         Delete
-      </Button>
+      </MenuItem>
+
       <Dialog
         open={open}
         onClose={handleClose}
@@ -32,18 +34,17 @@ export default function DeleteCategoryModal() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+          {"Are you sure you want to delete category?"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
+            This action cannot be undone.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button variant="contained" onClick={handleClose} autoFocus>
+            Delete
           </Button>
         </DialogActions>
       </Dialog>

@@ -8,6 +8,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import EditIcon from "@mui/icons-material/Edit";
+import { MenuItem } from "@mui/material";
 
 export default function EditCategoryModal() {
   const [open, setOpen] = React.useState(false);
@@ -22,10 +23,11 @@ export default function EditCategoryModal() {
 
   return (
     <React.Fragment>
-      <Button onClick={handleClickOpen}>
+      <MenuItem sx={{ display: "flex", gap: "4px" }} onClick={handleClickOpen}>
         <EditIcon />
         Edit
-      </Button>
+      </MenuItem>
+
       <Dialog
         open={open}
         onClose={handleClose}
@@ -44,27 +46,25 @@ export default function EditCategoryModal() {
           },
         }}
       >
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>Edit category</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
-          </DialogContentText>
           <TextField
             autoFocus
             required
             margin="dense"
-            id="name"
-            name="email"
-            label="Email Address"
-            type="email"
+            id="title"
+            name="title"
+            label="Category title"
+            type="text"
             fullWidth
             variant="standard"
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button>
+          <Button variant={"contained"} type="submit">
+            Edit
+          </Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>

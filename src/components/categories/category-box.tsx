@@ -1,6 +1,6 @@
 "use client";
 import SubCategoryBox, { SubCategory } from "./subcategory-box";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import {
@@ -24,6 +24,7 @@ const categoryStyle = {
   my: 1,
   mx: "auto",
   p: 2,
+  minW: "100%",
 };
 
 function CategoryBox({ name, icon, subCategories }: Props) {

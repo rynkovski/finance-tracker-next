@@ -1,9 +1,8 @@
 "use client";
-import { Container, Stack } from "@mui/material";
+import { Container } from "@mui/material";
 import CategoryBox from "./category-box";
-import { Reorder, useDragControls } from "framer-motion";
+import { Reorder } from "framer-motion";
 import { useState } from "react";
-import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 
 type SubCategory = {
   name: string;
@@ -18,6 +17,7 @@ type Props = {
 
 const styledList = {
   listStyleType: "none",
+  padding: 0,
 };
 
 function CategoriesList({ categories }: { categories: Props[] }) {
@@ -25,7 +25,7 @@ function CategoriesList({ categories }: { categories: Props[] }) {
   // const controls = useDragControls();
   return (
     <>
-      <Container>
+      <Container sx={{ padding: 0 }}>
         <Reorder.Group
           values={newCategories}
           onReorder={setNewCategories}

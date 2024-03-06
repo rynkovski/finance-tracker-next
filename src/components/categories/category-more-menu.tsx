@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import { IconButton } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
 import EditCategoryModal from "./edit-category-modal";
@@ -38,12 +37,8 @@ export default function CategoryMoreMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem sx={{ display: "flex", gap: "4px" }}>
-          <EditCategoryModal />
-        </MenuItem>
-        <MenuItem sx={{ display: "flex", gap: "4px" }}>
-          <DeleteCategoryModal />
-        </MenuItem>
+        <EditCategoryModal />
+        <DeleteCategoryModal />
       </Menu>
     </div>
   );
