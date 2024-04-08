@@ -33,8 +33,9 @@ export default function Hero() {
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
           <Typography
-            component="h1"
-            variant="h1"
+            component="h2"
+            variant="h2"
+            fontWeight={700}
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
@@ -42,25 +43,29 @@ export default function Hero() {
               textAlign: "center",
             }}
           >
-            Your Personal&nbsp;
+            Master
             <Typography
               component="span"
-              variant="h1"
-              sx={{
-                color: (theme) =>
-                  theme.palette.mode === "light"
-                    ? "primary.main"
-                    : "primary.light",
-              }}
+              variant="h2"
+              fontWeight={700}
+              color={"linear-gradient(#02294F, #090E10)"}
             >
-              Finance
+              Your
             </Typography>
-            Companion
+            Money,
+            <br />
+            Simplify
+            <Typography component="span" variant="h2" fontWeight={700}>
+              Your
+            </Typography>
+            Life
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
-            Unlock financial freedom with Budget Buddy,
-            <br /> your trusted partner in managing money and achieving your
-            financial goals.
+            Our intuitive app empowers you to take control of your finances with
+            ease. Track your expenses, visualize your savings goals, and make
+            informed decisions that lead to financial freedom. Join the
+            Budgetify community and start your journey towards a stress-free
+            financial future today!
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -70,7 +75,10 @@ export default function Hero() {
             sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
           >
             <Button variant="contained" color="primary">
-              Start now
+              Get started
+            </Button>
+            <Button variant="outlined" color="primary">
+              Learn more
             </Button>
           </Stack>
           <Typography
@@ -78,7 +86,7 @@ export default function Hero() {
             textAlign="center"
             sx={{ opacity: 0.8 }}
           >
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
+            By clicking &quot;Get started&quot; you agree to our&nbsp;
             <Link href="#" color="primary">
               Terms & Conditions
             </Link>

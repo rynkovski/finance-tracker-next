@@ -1,8 +1,8 @@
 "use client";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 
-const roboto = Roboto({
+const poppins = Poppins({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -10,17 +10,23 @@ const roboto = Roboto({
 
 const theme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
+    primary: {
+      light: "#dcffff",
+      main: "#69a1ff",
+      dark: "#0D47A1",
+      contrastText: "#fff",
+    },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: poppins.style.fontFamily,
   },
   components: {
     MuiAlert: {
       styleOverrides: {
         root: ({ ownerState }) => ({
           ...(ownerState.severity === "info" && {
-            backgroundColor: "#60a5fa",
+            backgroundColor: "#0F1C2E",
           }),
         }),
       },

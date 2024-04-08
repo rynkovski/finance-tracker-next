@@ -21,17 +21,17 @@ export default function LandingPage() {
       <AppAppBar />
       <Hero />
       <Box sx={{ bgcolor: "background.default" }}>
-        <Features />
-        <Divider />
-        <Testimonials />
-        <Divider />
-        <Highlights />
-        <Divider />
-        <Pricing />
-        <Divider />
-        <FAQ />
-        <Divider />
-        <Footer />
+        {/* <Features /> */}
+        {/* <Divider /> */}
+        {/* <Testimonials /> */}
+        {/* <Divider /> */}
+        {/* <Highlights /> */}
+        {/* <Divider /> */}
+        {/* <Pricing /> */}
+        {/* <Divider /> */}
+        {/* <FAQ /> */}
+        {/* <Divider /> */}
+        {/* <Footer /> */}
       </Box>
     </>
   );
