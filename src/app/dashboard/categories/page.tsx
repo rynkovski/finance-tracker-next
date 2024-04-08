@@ -60,17 +60,22 @@ function Categories() {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        mt={2}
+        mt={4}
         flexDirection="column"
         gap={2}
         width={"100%"}
       >
         <AddModal children={<AddCategoriesModal />} />
-        <Typography variant="h4" color="green">
+        <Typography
+          variant="h4"
+          color="green"
+          fontWeight={700}
+          letterSpacing={3}
+        >
           Incomes
         </Typography>
         <CategoriesList categories={incomes} />
-        <Typography variant="h4" color="red">
+        <Typography variant="h4" color="red" fontWeight={700} letterSpacing={3}>
           Expenses
         </Typography>
         <CategoriesList categories={expenses} />

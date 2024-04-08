@@ -25,6 +25,7 @@ const categoryStyle = {
   mx: "auto",
   p: 2,
   minW: "100%",
+  cursor: "grab",
 };
 
 function CategoryBox({ name, icon, subCategories }: Props) {
