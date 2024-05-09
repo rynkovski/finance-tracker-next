@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 const theme = createTheme({
   palette: {
-    mode: "dark",
+    mode: "light",
     primary: {
       light: "#dcffff",
       main: "#69a1ff",
