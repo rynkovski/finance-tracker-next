@@ -115,7 +115,7 @@ function AppAppBar() {
                   variant="text"
                   size="small"
                   component="a"
-                  href="/login"
+                  href="/sign-in"
                   target="_blank"
                 >
                   Sign in
@@ -125,7 +125,7 @@ function AppAppBar() {
                   variant="contained"
                   size="small"
                   component="a"
-                  href="/register"
+                  href="/sign-up"
                   target="_blank"
                 >
                   Sign up
@@ -172,7 +172,7 @@ function AppAppBar() {
                       color="primary"
                       variant="contained"
                       component="a"
-                      href="/register"
+                      href="/sign-up"
                       target="_blank"
                       sx={{ width: "100%" }}
                     >
@@ -184,7 +184,7 @@ function AppAppBar() {
                       color="primary"
                       variant="outlined"
                       component="a"
-                      href="/login"
+                      href="/sign-in"
                       target="_blank"
                       sx={{ width: "100%" }}
                     >
