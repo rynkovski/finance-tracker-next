@@ -14,6 +14,7 @@ export default function Hero() {
       id="hero"
       sx={(theme) => ({
         width: "100%",
+        height: "100dvh",
         backgroundImage:
           theme.palette.mode === "light"
             ? "linear-gradient(180deg, #CEE5FD, #FFF)"
@@ -33,9 +34,10 @@ export default function Hero() {
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
           <Typography
-            component="h2"
-            variant="h2"
+            component="h1"
+            variant="h3"
             fontWeight={700}
+            color={"#03a9f4"}
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
@@ -43,22 +45,7 @@ export default function Hero() {
               textAlign: "center",
             }}
           >
-            Master
-            <Typography
-              component="span"
-              variant="h2"
-              fontWeight={700}
-              color={"linear-gradient(#02294F, #090E10)"}
-            >
-              Your
-            </Typography>
-            Money,
-            <br />
-            Simplify
-            <Typography component="span" variant="h2" fontWeight={700}>
-              Your
-            </Typography>
-            Life
+            Master Your Money, Simplify Your Life
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
             Our intuitive app empowers you to take control of your finances with

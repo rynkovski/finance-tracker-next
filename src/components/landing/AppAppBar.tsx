@@ -59,7 +59,7 @@ function AppAppBar() {
               justifyContent: "space-between",
               flexShrink: 0,
               borderRadius: "20px",
-              bgcolor: "rgba(0, 0, 0, 0.4)",
+              bgcolor: "#CEE5FD",
               backdropFilter: "blur(24px)",
               maxHeight: 40,
               border: "1px solid",
@@ -79,8 +79,8 @@ function AppAppBar() {
               }}
             >
               <Typography
+                color={"black"}
                 fontWeight={"700"}
-                color={"text"}
                 ml={3}
                 sx={{ cursor: "pointer" }}
               >
@@ -97,7 +97,11 @@ function AppAppBar() {
                     onClick={() => scrollToSection(link.section)}
                     sx={{ py: "6px", px: "12px", borderRadius: "5px" }}
                   >
-                    <Typography variant="body2" color="text.primary">
+                    <Typography
+                      variant="body2"
+                      color="text.primary"
+                      key={link.name}
+                    >
                       {link.name}
                     </Typography>
                   </MenuItem>
@@ -161,7 +165,10 @@ function AppAppBar() {
                     }}
                   ></Box>
                   {links.map((link) => (
-                    <MenuItem onClick={() => scrollToSection(link.section)}>
+                    <MenuItem
+                      key={link.name}
+                      onClick={() => scrollToSection(link.section)}
+                    >
                       {link.name}
                     </MenuItem>
                   ))}
