@@ -9,35 +9,35 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
-import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
-import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
-import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+import QueryStatsRoundedIcon from "@mui/icons-material/QueryStats";
+import AdsClickRoundedIcon from "@mui/icons-material/AdsClickRounded";
+import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
-    title: "Dashboard",
+    icon: <QueryStatsRoundedIcon fontSize="large" />,
+    title: "Track Your Finances Easily",
     description:
-      "This item could provide a snapshot of the most important metrics or data points related to the product.",
+      "Our finance wallet tracker helps you keep a close eye on your income and expenses, giving you a clear picture of your financial health.",
     imageLight:
       'url("/static/images/templates/templates-images/dash-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
-    title: "Mobile integration",
+    icon: <AdsClickRoundedIcon fontSize="large" />,
+    title: "Set Budget Goals",
     description:
-      "This item could provide information about the mobile app version of the product.",
+      "With our finance wallet tracker, you can set budget goals and track your progress towards achieving them. Stay on top of your spending and save more.",
     imageLight:
       'url("/static/images/templates/templates-images/mobile-light.png")',
     imageDark:
       'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: "Available on all platforms",
+    icon: <DescriptionRoundedIcon fontSize="large" />,
+    title: "Get Smart Insights",
     description:
-      "This item could let users know the product is available on all platforms, such as web, mobile, and desktop.",
+      "Our finance wallet tracker provides smart insights and analysis, helping you make informed financial decisions and optimize your money management.",
     imageLight:
       'url("/static/images/templates/templates-images/devices-light.png")',
     imageDark:
@@ -55,23 +55,15 @@ export default function Features() {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container
+      id="features"
+      sx={{
+        pt: { xs: 4, sm: 12 },
+        pb: { xs: 8, sm: 16 },
+      }}
+    >
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
-          <div>
-            <Typography component="h2" variant="h4" color="text.primary">
-              Product features
-            </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ mb: { xs: 2, sm: 4 } }}
-            >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the
-              types of features, add-ons, or the benefits of the features.
-            </Typography>
-          </div>
           <Grid
             container
             item
