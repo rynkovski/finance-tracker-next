@@ -12,10 +12,13 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      light: "#dcffff",
-      main: "#69a1ff",
-      dark: "#0D47A1",
+      light: "#81daa9",
+      main: "#40867d",
+      dark: "#12542f",
       contrastText: "#fff",
+    },
+    background: {
+      default: "#f4fbf7",
     },
   },
   typography: {

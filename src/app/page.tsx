@@ -12,27 +12,26 @@ import Features from "@/components/landing/Features";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/landing/Footer";
-import AppAppBar from "@/components/landing/AppAppBar";
+import LandingTopBar from "@/components/landing/LandingTopBar";
 
 export default function LandingPage() {
   return (
     <>
-      <CssBaseline />
-      <AppAppBar />
+      <LandingTopBar />
       <Hero />
-      <Box sx={{ bgcolor: "background.default" }}>
-        {/* <Features /> */}
-        {/* <Divider /> */}
-        {/* <Testimonials /> */}
-        {/* <Divider /> */}
-        {/* <Highlights /> */}
-        {/* <Divider /> */}
-        {/* <Pricing /> */}
-        {/* <Divider /> */}
-        {/* <FAQ /> */}
-        {/* <Divider /> */}
-        {/* <Footer /> */}
-      </Box>
+      {/* <Box>
+        <Features />
+        <Divider />
+        <Testimonials />
+        <Divider />
+        <Highlights />
+        <Divider />
+        <Pricing />
+        <Divider />
+        <FAQ />
+        <Divider />
+        <Footer />
+      </Box> */}
     </>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -21,7 +22,7 @@ export default async function Dashboard() {
                 height: 240,
               }}
             >
-              {/* <Chart /> */}
+              <Chart />
             </Paper>
           </Grid>
           <Grid item xs={12} md={4} lg={3}>
