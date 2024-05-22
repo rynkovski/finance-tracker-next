@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ReactQueryProvider } from "@/providers/react-query-provider";
 
 export const metadata: Metadata = {
   title: "Budgetify",
@@ -16,17 +17,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body>
-          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
-              {children}
-            </ThemeProvider>
-          </AppRouterCacheProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <ReactQueryProvider>
+      <ClerkProvider>
+        <html lang="en">
+          <body>
+            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
+                {children}
+              </ThemeProvider>
+            </AppRouterCacheProvider>
+          </body>
+        </html>
+      </ClerkProvider>
+    </ReactQueryProvider>
   );
 }
