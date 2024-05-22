@@ -12,7 +12,7 @@ export default function Page() {
         p: 14,
       }}
     >
-      <SignIn path="/sign-in" />;
+      <SignIn path="/sign-in" />
     </Container>
   );
 }

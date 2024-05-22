@@ -11,10 +11,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Stack } from "@mui/material";
 import LogoIcon from "../logo-icon";
 import { useState } from "react";
+import { SignedOut, SignInButton } from "@clerk/nextjs";
 
 const links = [
   { name: "Features", section: "features" },
-  { name: "Testimonials", section: "testimonials" },
   { name: "Highlights", section: "highlights" },
   { name: "Pricing", section: "pricing" },
   { name: "FAQ", section: "faq" },
@@ -90,6 +90,7 @@ function LandingTopBar() {
             >
               {links.map((link) => (
                 <MenuItem
+                  key={link.name}
                   onClick={() => scrollToSection(link.section)}
                   sx={{ py: "6px", px: "12px", borderRadius: "5px" }}
                 >
@@ -111,24 +112,13 @@ function LandingTopBar() {
                 alignItems: "center",
               }}
             >
-              <Button
-                color="primary"
-                variant="text"
-                component="a"
-                href="/sign-in"
-                target="_blank"
-              >
-                Sign in
-              </Button>
-              <Button
-                color="primary"
-                variant="contained"
-                component="a"
-                href="/sign-up"
-                target="_blank"
-              >
-                Sign up
-              </Button>
+              <SignedOut>
+                <SignInButton>
+                  <Button color="primary" variant="contained" component="a">
+                    Sign Up
+                  </Button>
+                </SignInButton>
+              </SignedOut>
             </Box>
           </Box>
 
@@ -169,7 +159,8 @@ function LandingTopBar() {
                 ))}
 
                 <Divider />
-                <MenuItem>
+
+                {/* <MenuItem>
                   <Button
                     color="primary"
                     variant="contained"
@@ -192,7 +183,7 @@ function LandingTopBar() {
                   >
                     Sign in
                   </Button>
-                </MenuItem>
+                </MenuItem> */}
               </Box>
             </Drawer>
           </Box>
