@@ -16,39 +16,22 @@ const tiers = [
   {
     title: "Free",
     price: "0",
-    description: [
-      "10 users included",
-      "2 GB of storage",
-      "Help center access",
-      "Email support",
-    ],
+    description: ["siema", "co", "tam", "śpisz?"],
     buttonText: "Sign up for free",
     buttonVariant: "outlined",
   },
   {
-    title: "Professional",
+    title: "Pro",
     subheader: "Recommended",
-    price: "15",
-    description: [
-      "20 users included",
-      "10 GB of storage",
-      "Help center access",
-      "Priority email support",
-      "Dedicated team",
-      "Best deals",
-    ],
+    price: "0",
+    description: ["siema", "co", "tam", "śpisz?", "test", "lorem"],
     buttonText: "Start now",
     buttonVariant: "contained",
   },
   {
-    title: "Enterprise",
-    price: "30",
-    description: [
-      "50 users included",
-      "30 GB of storage",
-      "Help center access",
-      "Phone & email support",
-    ],
+    title: "Expert",
+    price: "0",
+    description: ["siema", "co", "tam", "śpisz?"],
     buttonText: "Contact us",
     buttonVariant: "outlined",
   },
@@ -78,10 +61,7 @@ export default function Pricing() {
           Pricing
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Quickly build an effective pricing table for your potential customers
-          with this layout. <br />
-          It&apos;s built with default Material UI components with little
-          customization.
+          The tool is 100% free! (for now 😉)
         </Typography>
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
@@ -103,8 +83,8 @@ export default function Pricing() {
                 borderColor:
                   tier.title === "Professional" ? "primary.main" : undefined,
                 background:
-                  tier.title === "Professional"
-                    ? "linear-gradient(#033363, #021F3B)"
+                  tier.subheader === "Recommended"
+                    ? "linear-gradient(#40867d, #fff)"
                     : undefined,
               }}
             >

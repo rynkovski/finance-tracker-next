@@ -62,6 +62,9 @@ export default function Features() {
         pb: { xs: 8, sm: 16 },
       }}
     >
+      <Typography component="h2" variant="h4" mb={6} textAlign={"center"}>
+        Features
+      </Typography>
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <Grid

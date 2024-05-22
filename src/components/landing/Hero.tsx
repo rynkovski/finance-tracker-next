@@ -1,26 +1,20 @@
+import { SignedOut, SignInButton } from "@clerk/nextjs";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 export default function Hero() {
   return (
-    <Box
-      id="hero"
-      sx={{
-        width: "100%",
-        height: "100dvh",
-      }}
-    >
+    <Box id="hero" width="100%">
       <Container
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
+          pt: { xs: 18, sm: 32 },
+          pb: { xs: 8, sm: 26 },
         }}
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "90%" } }}>
@@ -55,9 +49,14 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
           >
-            <Button variant="contained" color="primary">
-              Get started
-            </Button>
+            <SignedOut>
+              <SignInButton>
+                <Button variant="contained" color="primary">
+                  Get started
+                </Button>
+              </SignInButton>
+            </SignedOut>
+
             <Button variant="outlined" color="primary">
               Learn more
             </Button>
