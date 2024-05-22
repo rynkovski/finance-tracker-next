@@ -1,22 +1,16 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import UserMenu from "./user-menu";
 import { Navbar } from "./navbar";
+import { SignedIn, UserButton, useUser } from "@clerk/nextjs";
+import { Stack } from "@mui/material";
+import LogoIcon from "./logo-icon";
 
 const drawerWidth = 240;
 
@@ -41,20 +35,37 @@ function ResponsiveDrawer() {
 
   const drawer = (
     <div>
-      <Toolbar>
-        <Typography
-          variant="h6"
-          color="inherit"
-          noWrap
-          sx={{ ml: 2, flexGrow: 1 }}
-        >
-          Budget Buddy
-        </Typography>
+      <Toolbar
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Stack direction={"row"} spacing={1} alignItems={"center"}>
+          <LogoIcon />
+          <Typography
+            variant="h6"
+            color={"black"}
+            fontWeight={"700"}
+            noWrap
+            sx={{ cursor: "pointer", flexGrow: 1 }}
+            letterSpacing={1}
+          >
+            budgetify
+          </Typography>
+        </Stack>
       </Toolbar>
       <Divider />
       <Navbar />
     </div>
   );
+
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -80,7 +91,17 @@ function ResponsiveDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <UserMenu />
+          <Box
+            display={"flex"}
+            gap={1}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Typography>Hello, {user.firstName}</Typography>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </Box>
         </Toolbar>
       </AppBar>
       <Box
