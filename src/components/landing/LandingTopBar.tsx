@@ -71,11 +71,13 @@ function LandingTopBar() {
               px: 0,
             }}
           >
-            <Stack direction={"row"} spacing={1}>
+            <Stack direction={"row"} spacing={1} alignItems={"center"}>
               <LogoIcon />
               <Typography
+                variant="h6"
                 color={"black"}
                 fontWeight={"700"}
+                noWrap
                 sx={{ cursor: "pointer" }}
                 letterSpacing={1}
               >
