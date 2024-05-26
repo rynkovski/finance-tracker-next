@@ -1,13 +1,17 @@
 import * as React from "react";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import Title from "./ui/title";
+import Title from "./dashboard/title";
+import { createClient } from "@/utils/supabase/server";
+import { Box } from "@mui/material";
 
 function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
-export default function Deposits() {
+export default async function Deposits() {
+  const supabase = createClient();
+  const { data: notes } = await supabase.from("notes").select();
   return (
     <React.Fragment>
       <Title>Recent Deposits</Title>
@@ -22,6 +26,7 @@ export default function Deposits() {
           View balance
         </Link>
       </div>
+      <Box>{notes}</Box>
     </React.Fragment>
   );
 }
