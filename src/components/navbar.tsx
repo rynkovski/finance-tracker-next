@@ -13,12 +13,14 @@ import ListItem from "@mui/material/ListItem";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { List } from "@mui/material";
+import ReceiptIcon from "@mui/icons-material/Receipt";
 
 const LINKS = [
   { text: "Dashboard", href: "/dashboard", icon: AccountBalanceWalletIcon },
-  { text: "Reports", href: "/dashboard/reports", icon: BarChartIcon },
-  { text: "Goals", href: "/dashboard/goals", icon: TaskAltIcon },
-  { text: "Payers", href: "/dashboard/payers", icon: PeopleIcon },
+  { text: "Transactions", href: "/dashboard/transactions", icon: ReceiptIcon },
+  // { text: "Reports", href: "/dashboard/reports", icon: BarChartIcon },
+  // { text: "Goals", href: "/dashboard/goals", icon: TaskAltIcon },
+  // { text: "Payers", href: "/dashboard/payers", icon: PeopleIcon },
   { text: "Accounts", href: "/dashboard/accounts", icon: SavingsIcon },
   { text: "Categories", href: "/dashboard/categories", icon: ChecklistIcon },
   { text: "Settings", href: "/dashboard/settings", icon: SettingsIcon },
