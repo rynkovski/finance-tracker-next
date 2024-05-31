@@ -16,7 +16,8 @@ import WorkIcon from "@mui/icons-material/Work";
 import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useRef, useState } from "react";
+import { client } from "@/utils/supabase/createClerkSupabaseClient";
 
 const incomes = [
   {
@@ -98,13 +99,30 @@ function a11yProps(index: number) {
 
 function Categories() {
   const [value, setValue] = useState(0);
+  const [categories, setCategories] = useState<any>();
 
   const handleChange = (event: any, newValue: SetStateAction<number>) => {
     setValue(newValue);
   };
+
+  const listCategories = async () => {
+    // Fetches all addresses scoped to the user
+    // Replace "Addresses" with your table name
+    const { data, error } = await client.from("categories").select();
+    if (!error) setCategories(data);
+  };
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const sendCategories = async () => {
+    if (!inputRef.current?.value) return;
+    await client.from("categories").insert({
+      // Replace content with whatever field you want
+      title: inputRef.current?.value,
+    });
+  };
   return (
     <Container fixed>
-      <Box
+      {/* <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -124,7 +142,30 @@ function Categories() {
         <CustomTabPanel value={value} index={1}>
           <CategoriesList categories={expenses} />
         </CustomTabPanel>
-      </Box>
+      </Box> */}
+
+      <>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <input
+            onSubmit={sendCategories}
+            style={{ color: "black" }}
+            type="text"
+            ref={inputRef}
+          />
+          <button onClick={sendCategories}>Send Categories</button>
+          <button onClick={listCategories}>Fetch Categories</button>
+        </div>
+        <h2>Categories</h2>
+        {!categories ? (
+          <p>No categories</p>
+        ) : (
+          <ul>
+            {categories.map((category: any) => (
+              <li key={category.id}>{category.title}</li>
+            ))}
+          </ul>
+        )}
+      </>
     </Container>
   );
 }

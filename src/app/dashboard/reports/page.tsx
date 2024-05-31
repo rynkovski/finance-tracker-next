@@ -1,7 +1,11 @@
-import Container from "@mui/material/Container";
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
 
-function Reports() {
-  return <Container>Hello Reports</Container>;
+export default async function Reports() {
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+
+  const { data: notes } = await supabase.from("notes").select();
+
+  return <pre>{JSON.stringify(notes, null, 2)}</pre>;
 }
-
-export default Reports;
